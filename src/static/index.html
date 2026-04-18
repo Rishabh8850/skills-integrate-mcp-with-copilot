@@ -8,11 +8,40 @@
   </head>
   <body>
     <header>
-      <h1>Mergington High School</h1>
-      <h2>Extracurricular Activities</h2>
+      <div class="header-bar">
+        <div>
+          <h1>Mergington High School</h1>
+          <h2>Extracurricular Activities</h2>
+        </div>
+        <div class="teacher-access">
+          <button id="login-toggle" type="button" class="secondary-button">Teacher Login</button>
+        </div>
+      </div>
     </header>
 
     <main>
+      <section id="auth-container">
+        <div class="auth-panel-header">
+          <div>
+            <h3>Teacher Access</h3>
+            <p id="auth-status">Teachers can manage registrations after signing in.</p>
+          </div>
+          <button id="logout-button" type="button" class="secondary-button hidden">Log Out</button>
+        </div>
+
+        <form id="login-form" class="auth-form hidden">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required placeholder="principal.wilson" />
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" required placeholder="Enter teacher password" />
+          </div>
+          <button type="submit">Log In</button>
+        </form>
+      </section>
+
       <section id="activities-container">
         <h3>Available Activities</h3>
         <div id="activities-list">
@@ -23,6 +52,9 @@
 
       <section id="signup-container">
         <h3>Sign Up for an Activity</h3>
+        <p id="signup-help-text" class="section-note">
+          Teacher login is required to register or unregister students.
+        </p>
         <form id="signup-form">
           <div class="form-group">
             <label for="email">Student Email:</label>
