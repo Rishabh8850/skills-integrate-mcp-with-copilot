@@ -16,12 +16,24 @@ body {
 }
 
 header {
-  text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
   background-color: #1a237e;
   color: white;
   border-radius: 5px;
+}
+
+.header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 24px;
+}
+
+.teacher-access {
+  display: flex;
+  align-items: center;
 }
 
 header h1 {
@@ -37,7 +49,19 @@ main {
 
 @media (min-width: 768px) {
   main {
-    grid-template-columns: 2fr 1fr;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 767px) {
+  .header-bar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .auth-panel-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
@@ -55,6 +79,30 @@ section h3 {
   padding-bottom: 10px;
   border-bottom: 1px solid #ddd;
   color: #1a237e;
+}
+
+#auth-container {
+  max-width: 1030px;
+}
+
+.auth-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.auth-form {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  align-items: end;
+}
+
+.section-note {
+  margin-bottom: 15px;
+  color: #555;
 }
 
 .activity-card {
@@ -111,12 +159,12 @@ section h3 {
 }
 
 .delete-btn {
-  background: none;
-  border: none;
+  background-color: #ffebee;
+  border: 1px solid #ef9a9a;
   color: #c62828;
   cursor: pointer;
   font-size: 14px;
-  padding: 2px 5px;
+  padding: 4px 8px;
   transition: all 0.2s;
   border-radius: 3px;
 }
@@ -162,6 +210,25 @@ button {
 
 button:hover {
   background-color: #3949ab;
+}
+
+.secondary-button {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: white;
+}
+
+.secondary-button:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+}
+
+.auth-panel-header .secondary-button {
+  color: #1a237e;
+  border-color: #1a237e;
+}
+
+.auth-panel-header .secondary-button:hover {
+  background-color: rgba(26, 35, 126, 0.08);
 }
 
 .message {
